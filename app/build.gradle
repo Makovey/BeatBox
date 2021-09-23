@@ -7,6 +7,10 @@ plugins {
 android {
     compileSdk 31
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     defaultConfig {
         applicationId "org.makovey.beatbox"
         minSdk 24
@@ -37,6 +41,8 @@ android {
 }
 
 dependencies {
+    testImplementation 'org.mockito:mockito-core:2.25.0'
+    testImplementation 'org.mockito:mockito-inline:2.25.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
