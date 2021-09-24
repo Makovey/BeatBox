@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 class SoundViewModel(private val beatBox: BeatBox) : BaseObservable() {
     fun onButtonClicked() {
         sound?.let {
-            beatBox.play(it)
+            beatBox.play(it, speed!!)
         }
     }
 
@@ -20,4 +20,10 @@ class SoundViewModel(private val beatBox: BeatBox) : BaseObservable() {
     @get:Bindable
     val title: String?
         get() = sound?.name
+
+    var speed: Float? = 1.0f
+        set(value) {
+            field = value
+            notifyChange()
+        }
 }

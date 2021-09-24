@@ -22,9 +22,9 @@ class BeatBox(private val assets: AssetManager) {
         sounds = loadSounds()
     }
 
-    fun play(sound: Sound) {
+    fun play(sound: Sound, speed: Float) {
         sound.soundId?.let {
-            soundPool.play(it, 1.0f, 1.0f, 1, 0, 1.0f)
+            soundPool.play(it, 1.0f, 1.0f, 1, 0, speed)
         }
     }
 

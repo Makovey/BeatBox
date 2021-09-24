@@ -30,6 +30,6 @@ class SoundViewModelTest {
     fun callsBeatBoxPlayOnButtonClicked() {
         subject.onButtonClicked()
 
-        verify(beatBox).play(sound)
+        verify(beatBox).play(sound, 1.0f)
     }
 }
